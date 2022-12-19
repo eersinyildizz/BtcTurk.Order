@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using Serilog;
 using Serilog.Exceptions;
 
@@ -9,24 +10,41 @@ public static class SerilogExtensions
         this WebApplicationBuilder builder,
         string sectionName = "Serilog")
     {
-        // var serilogOptions = new SerilogOptions();
-        // builder.Configuration.GetSection(sectionName).Bind(serilogOptions);
+        var serilogOptions = new SerilogOptions();
+        builder.Configuration.GetSection(sectionName).Bind(serilogOptions);
 
         builder.Host.UseSerilog((context, loggerConfiguration) =>
         {
-            // https://github.com/serilog/serilog-settings-configuration
             loggerConfiguration.ReadFrom.Configuration(context.Configuration, sectionName: sectionName);
 
             loggerConfiguration
                 .Enrich.WithProperty("Application", builder.Environment.ApplicationName)
+                .Enrich.WithProperty("TraceId", Activity.Current?.TraceId.ToString())
                 .Enrich.FromLogContext()
-                // https://rehansaeed.com/logging-with-serilog-exceptions/
                 .Enrich.WithExceptionDetails();
             
-            // loggerConfiguration.WriteTo.Seq(serilogOptions.SeqUrl);
+            if (serilogOptions.UseConsole)
+            {
+                loggerConfiguration.WriteTo.Async(writeTo =>
+                    writeTo.Console(outputTemplate: serilogOptions.LogTemplate));
+            }
+            
+            if (!string.IsNullOrEmpty(serilogOptions.SeqUrl))
+            {
+                loggerConfiguration.WriteTo.Seq(serilogOptions.SeqUrl);
+            }
 
         });
 
         return builder;
+    }
+    
+    private sealed class SerilogOptions
+    {
+        public bool UseConsole { get; set; } = true;
+        public string? SeqUrl { get; set; } 
+
+        public string LogTemplate { get; set; } =
+            "{Timestamp:yyyy-MM-dd HH:mm:ss.fff} {Level} - {Message:lj}{NewLine}{Exception}";
     }
 }
