@@ -26,7 +26,6 @@ public class ServiceExtensionsTests
     {
         // Arrange
         ServiceCollection serviceCollection = new ServiceCollection();
-        var  configuration = new ConfigurationBuilder().AddInMemoryCollection().Build();
        
         // Act
         serviceCollection.AddServices();

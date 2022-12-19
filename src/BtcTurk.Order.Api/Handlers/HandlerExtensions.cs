@@ -9,6 +9,7 @@ public static class HandlerExtensions
     /// <returns></returns>
     public static IServiceCollection AddHandlers(this IServiceCollection serviceCollection)
     {
+        ArgumentNullException.ThrowIfNull(serviceCollection);
         serviceCollection.AddTransient<IEmailNotificationHandler, EmailNotificationHandler>();
         serviceCollection.AddTransient<ISmsNotificationHandler, SmsNotificationHandler>();
         serviceCollection.AddTransient<IPushNotificationHandler, PushNotificationHandler>();

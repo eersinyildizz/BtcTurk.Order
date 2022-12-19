@@ -15,6 +15,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\src\BtcTurk.Order.Api\BtcTurk.Order.Api.csproj" />
+      <ProjectReference Include="..\BtcTurk.Order.Api.Tests\BtcTurk.Order.Api.Tests.csproj" />
     </ItemGroup>
     <ItemGroup>
         <Using Include="System.Net.Http.Json" />
