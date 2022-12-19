@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../buildMultiTargeting/BtcTurk.Order.Api.props" />
+</Project>

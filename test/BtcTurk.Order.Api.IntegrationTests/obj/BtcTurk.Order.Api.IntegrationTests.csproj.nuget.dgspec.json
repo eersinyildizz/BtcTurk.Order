@@ -1,0 +1,269 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/ersinyildiz/Desktop/Projects/BtcTurk/BtcTurk.Order/test/BtcTurk.Order.Api.IntegrationTests/BtcTurk.Order.Api.IntegrationTests.csproj": {}
+  },
+  "projects": {
+    "/Users/ersinyildiz/Desktop/Projects/BtcTurk/BtcTurk.Order/src/BtcTurk.Order.Api/BtcTurk.Order.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/ersinyildiz/Desktop/Projects/BtcTurk/BtcTurk.Order/src/BtcTurk.Order.Api/BtcTurk.Order.Api.csproj",
+        "projectName": "BtcTurk.Order.Api",
+        "projectPath": "/Users/ersinyildiz/Desktop/Projects/BtcTurk/BtcTurk.Order/src/BtcTurk.Order.Api/BtcTurk.Order.Api.csproj",
+        "packagesPath": "/Users/ersinyildiz/.nuget/packages/",
+        "outputPath": "/Users/ersinyildiz/Desktop/Projects/BtcTurk/BtcTurk.Order/src/BtcTurk.Order.Api/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/ersinyildiz/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "EasyNetQ": {
+              "target": "Package",
+              "version": "[7.3.5, )"
+            },
+            "EasyNetQ.DI.Microsoft": {
+              "target": "Package",
+              "version": "[7.2.0, )"
+            },
+            "EasyNetQ.Serialization.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[7.2.0, )"
+            },
+            "Mapster": {
+              "target": "Package",
+              "version": "[7.3.0, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[7.0.1, )"
+            },
+            "OpenTelemetry.Exporter.OpenTelemetryProtocol": {
+              "target": "Package",
+              "version": "[1.4.0-beta.3, )"
+            },
+            "OpenTelemetry.Exporter.OpenTelemetryProtocol.Logs": {
+              "target": "Package",
+              "version": "[1.4.0-beta.3, )"
+            },
+            "OpenTelemetry.Exporter.Prometheus.AspNetCore": {
+              "target": "Package",
+              "version": "[1.4.0-beta.3, )"
+            },
+            "OpenTelemetry.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[1.0.0-rc9.9, )"
+            },
+            "OpenTelemetry.Instrumentation.AspNetCore": {
+              "target": "Package",
+              "version": "[1.0.0-rc9.9, )"
+            },
+            "OpenTelemetry.Instrumentation.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[1.0.0-beta.3, )"
+            },
+            "OpenTelemetry.Instrumentation.EventCounters": {
+              "target": "Package",
+              "version": "[1.0.0-alpha.2, )"
+            },
+            "OpenTelemetry.Instrumentation.Http": {
+              "target": "Package",
+              "version": "[1.0.0-rc9.9, )"
+            },
+            "OpenTelemetry.Instrumentation.Process": {
+              "target": "Package",
+              "version": "[1.0.0-alpha.2, )"
+            },
+            "OpenTelemetry.Instrumentation.Runtime": {
+              "target": "Package",
+              "version": "[1.1.0-beta.1, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[6.1.0, )"
+            },
+            "Serilog.Exceptions": {
+              "target": "Package",
+              "version": "[8.4.0, )"
+            },
+            "Serilog.Sinks.Async": {
+              "target": "Package",
+              "version": "[1.5.0, )"
+            },
+            "Serilog.Sinks.Elasticsearch": {
+              "target": "Package",
+              "version": "[8.4.1, )"
+            },
+            "Serilog.Sinks.Seq": {
+              "target": "Package",
+              "version": "[5.2.2, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/ersinyildiz/Desktop/Projects/BtcTurk/BtcTurk.Order/test/BtcTurk.Order.Api.IntegrationTests/BtcTurk.Order.Api.IntegrationTests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/ersinyildiz/Desktop/Projects/BtcTurk/BtcTurk.Order/test/BtcTurk.Order.Api.IntegrationTests/BtcTurk.Order.Api.IntegrationTests.csproj",
+        "projectName": "BtcTurk.Order.Api.IntegrationTests",
+        "projectPath": "/Users/ersinyildiz/Desktop/Projects/BtcTurk/BtcTurk.Order/test/BtcTurk.Order.Api.IntegrationTests/BtcTurk.Order.Api.IntegrationTests.csproj",
+        "packagesPath": "/Users/ersinyildiz/.nuget/packages/",
+        "outputPath": "/Users/ersinyildiz/Desktop/Projects/BtcTurk/BtcTurk.Order/test/BtcTurk.Order.Api.IntegrationTests/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/ersinyildiz/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/ersinyildiz/Desktop/Projects/BtcTurk/BtcTurk.Order/src/BtcTurk.Order.Api/BtcTurk.Order.Api.csproj": {
+                "projectPath": "/Users/ersinyildiz/Desktop/Projects/BtcTurk/BtcTurk.Order/src/BtcTurk.Order.Api/BtcTurk.Order.Api.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.Testing": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.4.0, )"
+            },
+            "System.Collections": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "XunitXml.TestLogger": {
+              "target": "Package",
+              "version": "[3.0.70, )"
+            },
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "coverlet.msbuild": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.2, )"
+            },
+            "xunit.runner.console": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.2, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

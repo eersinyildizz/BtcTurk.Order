@@ -1,0 +1,49 @@
+
+@userid = "22"
+
+### Create order
+POST http://localhost:5024/orders
+Content-Type: application/json
+userid: {{userid}}
+
+{
+  "amount": 5000,
+  "dayOfMonth": 3,
+  "month": 11,
+  "orderNotifications": [
+    {
+      "notificationType": 1
+    },
+    {
+      "notificationType": 2
+    },
+    {
+      "notificationType": 0
+    }
+  ]
+}
+
+### GetBy userid
+GET http://localhost:5024/orders
+Content-Type: application/json
+userid: {{userid}}
+
+### GetBy orderid
+GET http://localhost:5024/orders/55a66162-1761-401f-ab24-cdb0d5d9fcc0
+Content-Type: application/json
+userid: {{userid}}
+
+### Delete order
+DELETE  http://localhost:5024/orders/55a66162-1761-401f-ab24-cdb0d5d9fcc0
+Content-Type: application/json
+userid: {{userid}}
+
+### Get notification histories by orderid
+GET http://localhost:5024/notification-history/24f50677-b92a-483f-920b-afb6cdfe2dd5
+Content-Type: application/json
+userid: {{userid}}
+
+### Get notification histories
+GET http://localhost:5024/notification-history
+Content-Type: application/json
+userid: {{userid}}
