@@ -20,6 +20,7 @@ public abstract class AbstractNotificationHandler : IEventHandler
     /// <inheritdoc/>
     public async Task HandleAsync(NotificationMessage notificationMessage)
     {
+        ArgumentNullException.ThrowIfNull(notificationMessage);
         var order = await _dbContext.Orders.Include(p => p.OrderNotifications).AsNoTracking()
             .SingleOrDefaultAsync(p => p.Id == notificationMessage.OrderId);
         
@@ -44,5 +45,5 @@ public abstract class AbstractNotificationHandler : IEventHandler
     /// </summary>
     /// <param name="notificationMessage"></param>
     /// <returns></returns>
-    protected abstract Task InternalHandleAsync(NotificationMessage notificationMessage);
+    public abstract Task InternalHandleAsync(NotificationMessage notificationMessage);
 }

@@ -17,7 +17,7 @@ public class PushNotificationHandler : AbstractNotificationHandler, IPushNotific
     }
 
     /// <inheritdoc/>
-    protected override async Task InternalHandleAsync(NotificationMessage notificationMessage)
+    public override async Task InternalHandleAsync(NotificationMessage notificationMessage)
     {
         await _pushService.NotifyAsync(notificationMessage);
     }

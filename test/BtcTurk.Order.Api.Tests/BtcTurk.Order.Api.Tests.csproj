@@ -14,6 +14,9 @@
         <PackageReference Include="NBuilder" Version="6.1.0" />
         <PackageReference Include="Should" Version="1.1.20" />
         <PackageReference Include="xunit" Version="2.4.1" />
+        <PackageReference Include="StructureMap.AutoMocking.Moq.Updated" Version="1.0.2" />
+        <PackageReference Include="Moq" Version="4.18.2" />
+        <PackageReference Include="NBuilder" Version="6.1.0" />
         <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>

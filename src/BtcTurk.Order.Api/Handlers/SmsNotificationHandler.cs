@@ -23,7 +23,7 @@ public class SmsNotificationHandler :AbstractNotificationHandler,  ISmsNotificat
     }
     
     /// <inheritdoc/>
-    protected override async Task InternalHandleAsync(NotificationMessage notificationMessage)
+    public override async Task InternalHandleAsync(NotificationMessage notificationMessage)
     {
         await _smsService.NotifyAsync(notificationMessage);
     }

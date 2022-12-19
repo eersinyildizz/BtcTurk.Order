@@ -28,7 +28,7 @@ public class EmailNotificationHandler : AbstractNotificationHandler , IEmailNoti
     }
     
     /// <inheritdoc/>
-    protected override async Task InternalHandleAsync(NotificationMessage notificationMessage)
+    public override async Task InternalHandleAsync(NotificationMessage notificationMessage)
     {
         await _emailService.NotifyAsync(notificationMessage);
     }

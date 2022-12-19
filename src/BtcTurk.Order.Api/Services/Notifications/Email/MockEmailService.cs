@@ -11,6 +11,7 @@ public class MockEmailService : IEmailService
     
     public Task NotifyAsync(NotificationMessage notificationMessage)
     {
+        ArgumentNullException.ThrowIfNull(notificationMessage);
         _logger.LogInformation("Email sent : {@notificationMessage}",notificationMessage);
         return Task.CompletedTask;
     }
