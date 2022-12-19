@@ -4,7 +4,8 @@
         <TargetFramework>net7.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <ContainerImageName>btcturk-order-api</ContainerImageName>
+       <ContainerImageTag>latest</ContainerImageTag>
     </PropertyGroup>
 
     <ItemGroup>
@@ -18,6 +19,7 @@
         <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.1" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
         <PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
+        <PackageReference Include="Microsoft.NET.Build.Containers" Version="0.2.7" />
     </ItemGroup>
 
     <ItemGroup>

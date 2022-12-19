@@ -43,6 +43,7 @@ public class RabbitMqOptions
     /// </summary>
     public string VirtualHost { get; set; } = "/";
 
+
     /// <summary>
     /// Host
     /// </summary>

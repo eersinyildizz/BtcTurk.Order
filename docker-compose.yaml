@@ -1,0 +1,49 @@
+version: '3.4'
+
+services:
+  btcturk-order-api:
+    image: btcturk-order-api
+    pull_policy: if_not_present      
+    environment:
+      OTEL_EXPORTER_OTLP_ENDPOINT: http://jaeger:4317
+      Event__RabbitMq__Host: rabbitmq
+    ports:
+      - "5024:5024"
+    container_name: btcturk-order-api
+    depends_on:
+      - rabbitmq
+
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    environment:
+      - COLLECTOR_ZIPKIN_HOST_PORT=:9411
+      - COLLECTOR_OTLP_ENABLED=true
+    ports:
+      - "6831:6831/udp"
+      - "6832:6832/udp"
+      - "5778:5778"
+      - "16686:16686"
+      - "4317:4317"
+      - "4318:4318"
+      - "14250:14250"
+      - "14268:14268"
+      - "14269:14269"
+      - "9411:9411"
+    container_name: jaeger
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    container_name: rabbitmq
+
+  seq:
+    image: datalust/seq:latest
+    container_name: seqv
+    restart: on-failure
+    ports:
+      - 8081:80
+      - 5341:5341
+    environment:
+      ACCEPT_EULA: Y

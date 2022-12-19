@@ -5,6 +5,7 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
+RUN ls
 COPY ["src/BtcTurk.Order.Api/BtcTurk.Order.Api.csproj", "BtcTurk.Order.Api/"]
 RUN dotnet restore "src/BtcTurk.Order.Api/BtcTurk.Order.Api.csproj"
 COPY . .

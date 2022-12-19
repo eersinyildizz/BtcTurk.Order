@@ -1,0 +1,35 @@
+name: btcturkorder
+namespace: btcturkordernamespace
+network: btcturkordernetworks
+services:
+- name: order-api
+  project: src/BtcTurk.Order.Api/BtcTurk.Order.Api.csproj
+  env:
+  - name: Event__RabbitMq__Host
+    value: rabbitmq
+
+- name: rabbitmq
+  image: rabbitmq:3-management
+  bindings:
+  - name: mq
+    port: 5672
+    protocol: amqp
+  - name: mui
+    port: 15672
+
+- name: jaeger
+  image: jaegertracing/all-in-one:latest
+  bindings: 
+  - port: 6831
+    name: tr
+    protocol: udp
+  - port: 16686
+    name: ui
+
+- name: seq
+  image: datalust/seq
+  bindings: 
+  - name: mq
+    port: 80
+  - name: mui
+    port: 5341
