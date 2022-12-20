@@ -14,13 +14,13 @@ public class EventOptions
     /// Options of rabbitmq
     /// </summary>
     public RabbitMqOptions RabbitMq { get; set; } = new RabbitMqOptions();
-    
+
     /// <summary>
     /// Number of retry 
     /// </summary>
     public int RetryCount { get; set; } = 5;
-    
-    
+
+
 }
 
 /// <summary>
@@ -36,7 +36,7 @@ public class RabbitMqOptions
     /// <summary>
     /// Password
     /// </summary>
-    public string Password { get; set; }= "guest";
+    public string Password { get; set; } = "guest";
 
     /// <summary>
     /// Virtual Host

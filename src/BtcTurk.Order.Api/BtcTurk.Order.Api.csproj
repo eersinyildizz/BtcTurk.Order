@@ -4,8 +4,8 @@
         <TargetFramework>net7.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <ContainerImageName>btcturk-order-api</ContainerImageName>
-       <ContainerImageTag>latest</ContainerImageTag>
+        <!-- <ContainerImageName>btcturk-order-api</ContainerImageName>
+       <ContainerImageTag>latest</ContainerImageTag> -->
     </PropertyGroup>
 
     <ItemGroup>

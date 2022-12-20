@@ -1,5 +1,5 @@
 
-@userid = "22"
+@userid = "123"
 
 ### Create order
 POST http://localhost:5024/orders
@@ -7,7 +7,7 @@ Content-Type: application/json
 userid: {{userid}}
 
 {
-  "amount": 5000,
+  "amount": 10000,
   "dayOfMonth": 3,
   "month": 11,
   "orderNotifications": [

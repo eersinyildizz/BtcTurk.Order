@@ -6,7 +6,7 @@ services:
   project: src/BtcTurk.Order.Api/BtcTurk.Order.Api.csproj
   env:
   - name: Event__RabbitMq__Host
-    value: rabbitmq
+    value: localhost
 
 - name: rabbitmq
   image: rabbitmq:3-management

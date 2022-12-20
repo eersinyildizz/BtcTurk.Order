@@ -2,19 +2,28 @@ version: '3.4'
 
 services:
   btcturk-order-api:
-    image: btcturk-order-api
-    pull_policy: if_not_present      
+    image: ${DOCKER_REGISTRY-}btcturk-order-api
     environment:
-      OTEL_EXPORTER_OTLP_ENDPOINT: http://jaeger:4317
-      Event__RabbitMq__Host: rabbitmq
-    ports:
-      - "5024:5024"
-    container_name: btcturk-order-api
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://jaeger:4317
+      - ASPNETCORE_ENVIRONMENT=Development
+      - Serilog__SeqUrl=http://seq:5341
+      - EventBus__RabbitMq__Host=rabbitmq
+      - EventBus__RabbitMq__Username=guest
+      - EventBus__RabbitMq__Password=guest
+    build:
+      context: .
+      dockerfile: src/BtcTurk.Order.Api/Dockerfile
+    networks:
+      - my-net
     depends_on:
+      - rabbitmq
+    links: 
       - rabbitmq
 
   jaeger:
     image: jaegertracing/all-in-one:latest
+    networks:
+      - my-net
     environment:
       - COLLECTOR_ZIPKIN_HOST_PORT=:9411
       - COLLECTOR_OTLP_ENABLED=true
@@ -32,7 +41,7 @@ services:
     container_name: jaeger
 
   rabbitmq:
-    image: rabbitmq:3-management
+    image: rabbitmq:3-management-alpine
     ports:
       - "15672:15672"
       - "5672:5672"
@@ -40,10 +49,15 @@ services:
 
   seq:
     image: datalust/seq:latest
-    container_name: seqv
+    networks:
+      - my-net
+    container_name: seq
     restart: on-failure
     ports:
-      - 8081:80
-      - 5341:5341
+      - "5351:80" 
     environment:
-      ACCEPT_EULA: Y
+      - ACCEPT_EULA=Y
+
+networks:
+  my-net:
+    driver: bridge
