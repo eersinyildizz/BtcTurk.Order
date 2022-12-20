@@ -9,7 +9,8 @@
 ### RabbitMq
 
 ```
-docker run -d --hostname my-rabbit --name some-rabbit rabbitmq:3
+docker run -d --name some-rabbit -p 5672:5672 -p 5673:5673 -p 15672:15672 rabbitmq:3-management
+
 ```
 
 `RabbitMq` options can be configure at section of [appsettings.json](src/BtcTurk.Order.Api/appsettings.json):
@@ -25,7 +26,11 @@ docker run -d --hostname my-rabbit --name some-rabbit rabbitmq:3
   },
 ```
 
-### Send Requests to application
+### Testing application
+
+You can view all methods by [swagger](http://localhost:5024/swagger)
+
+or
 
 You can use [order.http](Request/order.http) on VSCode with restclient extensions
 
@@ -48,6 +53,14 @@ docker run -d --name jaeger -e COLLECTOR_ZIPKIN_HOST_PORT=:9411 -e COLLECTOR_OTL
 1. View the collected spans
 
 ### Seq
+
+1. Run Seq with Docker
+
+```
+docker run -d -e ACCEPT_EULA=Y -p 80:80 -p 5341:5341 datalust/seq
+```
+
+Open [Seq in your browser](http://localhost:80/)
 
 For using seq, we should enable it with setting `SeqUrl` value in the `Serilog` section of [appsettings.json](src/BtcTurk.Order.Api/appsettings.json):
 
