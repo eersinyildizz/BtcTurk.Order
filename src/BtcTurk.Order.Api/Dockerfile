@@ -6,10 +6,11 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 RUN ls
-COPY ["src/BtcTurk.Order.Api/BtcTurk.Order.Api.csproj", "BtcTurk.Order.Api/"]
+COPY ["src/BtcTurk.Order.Api/BtcTurk.Order.Api.csproj", "src/BtcTurk.Order.Api/"]
 RUN dotnet restore "src/BtcTurk.Order.Api/BtcTurk.Order.Api.csproj"
 COPY . .
-WORKDIR "/src/BtcTurk.Order.Api"
+WORKDIR "/src/src/BtcTurk.Order.Api"
+RUN ls
 RUN dotnet build "BtcTurk.Order.Api.csproj" -c Release -o /app/build
 
 FROM build AS publish
