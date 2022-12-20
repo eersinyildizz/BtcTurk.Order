@@ -28,6 +28,13 @@ docker run -d --name some-rabbit -p 5672:5672 -p 5673:5673 -p 15672:15672 rabbit
 
 ### Testing application
 
+Run application
+
+```
+cd src/BtcTurk.Order.Api/
+dotnet run
+```
+
 You can view all methods by [swagger](http://localhost:5024/swagger)
 
 or
@@ -49,6 +56,7 @@ If you wish to view the collected telemetry, follow the steps below.
 docker run -d --name jaeger -e COLLECTOR_ZIPKIN_HOST_PORT=:9411 -e COLLECTOR_OTLP_ENABLED=true -p 6831:6831/udp -p 6832:6832/udp -p 5778:5778 -p 16686:16686 -p 4317:4317 -p 4318:4318 -p 14250:14250 -p 14268:14268 -p 14269:14269 -p 9411:9411 jaegertracing/all-in-one:latest
 ```
 
+1. Rubuild and run application
 1. Open [Jaeger in your browser](http://localhost:16686/)
 1. View the collected spans
 
@@ -59,6 +67,8 @@ docker run -d --name jaeger -e COLLECTOR_ZIPKIN_HOST_PORT=:9411 -e COLLECTOR_OTL
 ```
 docker run -d -e ACCEPT_EULA=Y -p 80:80 -p 5341:5341 datalust/seq
 ```
+
+2. Rubuild and run application
 
 Open [Seq in your browser](http://localhost:80/)
 
